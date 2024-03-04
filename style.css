@@ -2,6 +2,23 @@
     margin: 0px;
     padding: 0px;
 }
+
+.pol-btn{
+    padding: 8px;
+    background-color: rgb(168, 241, 217);
+    color: black;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.pol-btn:hover{
+    background-color: burlywood;
+    color: rgb(83, 67, 35);
+}
+
 .category-bar{
     background-color: rgb(190, 188, 188);
     padding: 25px;
@@ -20,6 +37,7 @@ margin-left: -10px;
 cursor: pointer;
 background-color: gray;
 font-weight: bold;
+transition: .3s;
 color: white;
 }
 #search-btn:hover{
@@ -40,6 +58,11 @@ color: white;
     padding: 10px 20px;
 
 }
+
+.news-container{
+    /* margin-bottom: 20px; */
+}
+
 .singleNews{
     width: 75%;
     /* padding: 20px; */
@@ -47,11 +70,16 @@ color: white;
     display: flex;
     align-items: center;
     /* justify-content: space-around; */
-box-shadow: 4px 4px 8px gray;
-border-radius:5px;
-
+    box-shadow: 4px 4px 8px gray;
+    border-radius:5px;
+    /* margin: 20px; */
     
 }
+
+.news-photo{
+    width: 100%;
+}
+
 .news-info{
     padding: 20px;
 }
