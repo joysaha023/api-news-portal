@@ -1,6 +1,7 @@
 const buttonDiv = document.getElementById('category-bar-container')
 const newsContainer = document.getElementById('news-container')
 
+
 const loadCategory = async() => {
     const res = await fetch('https://openapi.programming-hero.com/api/news/categories');
     const data = await res.json();
@@ -9,21 +10,16 @@ const loadCategory = async() => {
     singleData.forEach((item) => {
         const appendBtn = document.createElement('div');
         appendBtn.innerHTML = `
-        <button onclick="getNewsId('${item.category_id}')" class="pol-btn">${item.category_name}</button>
+        <button onclick="loadNews('${item.category_id}')" class="pol-btn">${item.category_name}</button>
         `;
         buttonDiv.appendChild(appendBtn)
     })
 }
 
-const getNewsId = async (id) => {
-    // loadNews(id)
-    // console.log(id)
-    loadNews(id)
-}
 
 
-
-const loadNews = async (id ='08' ) => {
+const loadNews = async (id ) => {
+    document.getElementById('loading-spiner').style.display = "block";
     const res = await fetch(` https://openapi.programming-hero.com/api/news/category/${id}`)
     const data = await res.json()
     const singleNews = data.data
@@ -85,7 +81,19 @@ const loadNews = async (id ='08' ) => {
     })
 }
 
+const handleSearch = () => {
+    
+    const value = document.getElementById('search-box').value;
+
+    if(value){
+        loadNews(value)
+    }
+    else{
+        alert("Please enter a valid ID")
+    }
+}
+
 
 
 loadCategory()
-loadNews()
+loadNews("08")
