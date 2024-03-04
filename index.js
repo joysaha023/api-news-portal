@@ -73,7 +73,7 @@ const loadNews = async (id ) => {
             <p>${singleNews.total_view}</p>
           </div>
           <div class="details-btn-container">
-            <button onclick="handleDetails(${JSON.stringify({name:"gias"})})" class="details-btn">Details</button>
+            <button onclick="handleDetails(${JSON.stringify()})" class="details-btn">Details</button>
           </div>
       </div>
     </div>
