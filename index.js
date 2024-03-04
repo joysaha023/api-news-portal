@@ -26,6 +26,7 @@ const loadNews = async (id ) => {
     newsContainer.innerText = ''
     
     singleNews.forEach((singleNews) => {
+        document.getElementById('loading-spiner').style.display = "none";
         const appendNews = document.createElement('div')
         appendNews.classList.add("singleNews")
         appendNews.innerHTML = `
@@ -78,6 +79,8 @@ const loadNews = async (id ) => {
     </div>
         `;
         newsContainer.appendChild(appendNews)
+        
+        
     })
 }
 
